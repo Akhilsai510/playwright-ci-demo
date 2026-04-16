@@ -1,0 +1,13 @@
+# Node dependencies
+node_modules/
+
+# Environment variables - contains secrets
+.env
+.env.local
+
+# Playwright test results and reports
+test-results/
+playwright-report/
+
+# Mac system file - created automatically by macOS
+.DS_Store
