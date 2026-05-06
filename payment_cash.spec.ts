@@ -1,11 +1,12 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from '@playwright/test';
 
-// Payment Cash Test
+// Product Page Test - Saucedemo
 // Author: Akhil
 
-test('user should complete payment with cash', async ({ page }) => {
-  await page.goto('https://uhg-portal.com/payment');
-  await page.click('#cashOption');
-  await page.click('#confirmBtn');
-  await expect(page.locator('#successMsg')).toBeVisible();
+test('user should see products after login', async ({ page }) => {
+  await page.goto('https://www.saucedemo.com');
+  await page.fill('#user-name', 'standard_user');
+  await page.fill('#password', 'secret_sauce');
+  await page.click('#login-button');
+  await expect(page.locator('.inventory_list')).toBeVisible();
 });
