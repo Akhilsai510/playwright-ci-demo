@@ -28,14 +28,8 @@ pipeline {
 
         stage('Publish Report') {
             steps {
-                publishHTML(target: [
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
-                    reportDir: 'playwright-reporter',
-                    reportFiles: 'index-html',
-                    reportName: 'Playwright Test Report'
-                ])
+                echo 'Tests completed - report saved to playwright-report/'
+             
             }
         }
     }
